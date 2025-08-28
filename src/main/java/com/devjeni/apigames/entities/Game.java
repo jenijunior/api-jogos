@@ -19,11 +19,13 @@ public class Game {
     private String platforms;
     private Double score;
     private String imgUrl;
+    //Definir que o banco de dados aceite texto acima de 255 caracteres.
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
+    @Column(columnDefinition = "TEXT")
     private String LongDescription;
 
     public Game(){
-
     }
 
     public Game(String title, Integer year, String genre, String platforms, Double score, String imgUrl, String shortDescription, String longDescription, Long id) {
