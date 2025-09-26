@@ -1,6 +1,7 @@
 package com.devjeni.apigames.dtos;
 
 import com.devjeni.apigames.entities.Game;
+import com.devjeni.apigames.projections.GameMinProjection;
 
 public record GameMinDTO (
         Long id,
@@ -11,5 +12,9 @@ public record GameMinDTO (
 ) {
     public GameMinDTO(Game entity){
        this(entity.getId(), entity.getTitle(), entity.getYear(), entity.getImgUrl(), entity.getShortDescription());
+    }
+
+    public GameMinDTO(GameMinProjection projection){
+        this(projection.getId(), projection.getTitle(), projection.getYear(), projection.getImgUrl(), projection.getShortDescription());
     }
 }
